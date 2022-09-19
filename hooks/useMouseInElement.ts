@@ -16,5 +16,5 @@ export default function useMouseInElement(Node: HTMLElement) {
       Node && Node.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [Node]);
-  return String(isInElement);
+  return isInElement;
 }

@@ -10,7 +10,7 @@ function App() {
   const width = useWidth();
   const [x, y] = useMouse();
   const boxRef = useRef<HTMLDivElement>(null);
-  const isInBox = useMouseInElement(boxRef.current!);
+  const isInBox = String(useMouseInElement(boxRef.current!));
   const [dragRef, isDragging,dragX,dragY] = useDrag();
   const [scrollX,scrollY] = useScroll();
   return (
@@ -23,7 +23,7 @@ function App() {
         isInBox:{isInBox}
       </div>
       <div ref={dragRef} className="dragbox" style={{ position: "fixed" }}>
-        <div>{isDragging}</div>
+        <div>{String(isDragging)}</div>
         <div>dragX:{dragX},dragY:{dragY}</div>
         <div>
           window-scroll:

@@ -1,6 +1,6 @@
 import {useState,useEffect,useRef} from "react";
 
-export default function useDrag():[React.RefObject<any>,string,number,number]{
+export default function useDrag():[React.RefObject<any>,boolean,number,number]{
   const [isDragging,setIsDragging] = useState(false);
   const [x,setX] = useState(0);
   const [y,setY] = useState(0);
@@ -40,5 +40,5 @@ export default function useDrag():[React.RefObject<any>,string,number,number]{
       ref.current!.removeEventListener("dragend",handleDragEnd);
     })
   },[])
-  return [ref,String(isDragging),x,y]
+  return [ref,isDragging,x,y]
 }
